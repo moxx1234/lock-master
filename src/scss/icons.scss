@@ -1,0 +1,47 @@
+@font-face {
+	font-family: 'icons';
+	src: url('../fonts/icons.woff') format("woff"), url('../fonts/icons.woff2#icons') format("woff2");
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'icons' !important;
+	speak: never;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-phone:before {
+	content: "\e905";
+}
+
+.icon-car:before {
+	content: "\e903";
+}
+
+.icon-home:before {
+	content: "\e904";
+}
+
+.icon-tick:before {
+	content: "\e900";
+}
+
+.icon-arrow-left:before {
+	content: "\e901";
+}
+
+.icon-arrow-right:before {
+	content: "\e902";
+}

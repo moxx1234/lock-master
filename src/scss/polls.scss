@@ -1,0 +1,394 @@
+// ========================= Polls =============================================
+
+.polls {
+
+	// .polls__container
+	&__container {
+		@media (min-width: 90.0625em) {
+			max-width: 70%;
+		}
+	}
+
+	// .polls__description
+	&__description {
+		position: relative;
+
+		margin: 0 0 15px;
+
+		@media (min-width: 48.0625em) {
+			margin: 0 0 25px;
+		}
+	}
+
+	// .polls__reason
+	&__reason {
+		@media (min-width: 26.625em) {
+			margin: 0 0 55px;
+		}
+
+		@media (min-width: 48.0625em) {
+			max-width: 70%;
+
+			margin: 0;
+		}
+	}
+
+	// .polls__title
+	&__title {}
+
+	// .polls__benefits
+	&__benefits {}
+
+	// .polls__arrow
+	&__arrow {
+		display: none;
+
+		@media (min-width: 26.625em) {
+			display: block;
+
+			position: absolute;
+			bottom: 0;
+
+			transform: scale(-0.2, 0.2) translate(-50%, 50%) rotate(35deg);
+			transform-origin: bottom left;
+		}
+
+		@media (min-width: 48.0625em) {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+
+			transform-origin: bottom;
+			transform: scale(0.6) translate(0, 0) rotate(15deg);
+		}
+
+		@media (min-width: 64.0625em) {
+			right: 0;
+		}
+
+		@media (min-width: 90.0625em) {
+			right: 20%;
+		}
+	}
+
+	// .polls__situation-box
+	&__situation-box {
+		position: relative;
+	}
+
+	// .polls__progress-bar
+	&__progress-bar {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 3px;
+	}
+
+	// .polls__situation
+	&__situation {
+		display: flex;
+
+		overflow: hidden;
+		position: relative;
+
+		margin: 0 0 30px;
+	}
+
+	// .polls__form
+	&__form {
+		flex: 1 0 100%;
+		margin: 0 auto;
+	}
+
+	// .polls__control
+	&__control {
+		display: flex;
+		justify-content: space-between;
+
+		a {
+			padding: 15px 10px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		button {
+			display: none;
+			padding: 15px 10px;
+			border-radius: 5px;
+			font-size: 1rem;
+
+			&.active {
+				display: block;
+			}
+		}
+
+		#prev-form {
+			background-color: #cbcbcb;
+			box-shadow: 0px 0px 7px 4px rgba(203, 203, 203, 0.8);
+
+			@media (pointer: fine) {
+				&:hover {
+					background-color: inherit;
+				}
+			}
+
+			&::before {
+				content: "\00a0←";
+				font-size: 1.125rem;
+				margin: 0 5px 0 0;
+			}
+		}
+
+		#next-form {
+			display: none;
+
+			&.active {
+				display: block;
+			}
+
+			&::after {
+				content: "\00a0→";
+				font-size: 1.125rem;
+				margin: 0 0 0 5px;
+			}
+		}
+	}
+
+}
+
+.progress-bar {
+	display: flex;
+
+	&__done {
+		background-color: #ffb900;
+		width: 0%;
+		transition: 0.3s linear;
+	}
+
+	&__left {
+		background-color: #7d7d7d;
+		width: 100%;
+		transition: 0.3s linear;
+	}
+}
+
+.benefits {
+	display: flex;
+	justify-content: space-between;
+
+	// .benefits__item
+	&__item {
+		flex-basis: 25%;
+
+		position: relative;
+
+		font-size: 0.6875rem;
+		text-decoration: underline;
+		font-weight: 350;
+		text-align: center;
+
+		opacity: 0;
+		transform: translateY(-50%);
+		transition-property: opacity, transform;
+		transition-duration: .5s;
+
+		&.appeared {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		@media (min-width: 48.0625em) {
+			font-size: 1rem;
+		}
+
+		@media (min-width: 90.0625em) {
+			font-size: 1.125rem;
+		}
+
+		&::after {
+			content: 'или';
+			text-transform: uppercase;
+			font-size: 0.75rem;
+			color: #949494;
+			font-weight: 300;
+
+			position: absolute;
+			right: -5px;
+			top: 50%;
+			transform: translate(100%, -50%);
+			z-index: 1;
+
+			@media (min-width: 26.625em) {
+				font-size: 1rem;
+			}
+
+			@media (min-width: 48.0625em) {
+				font-size: 1.25rem;
+			}
+		}
+
+		&:last-child {
+			&::after {
+				content: '';
+			}
+		}
+	}
+
+	// .benefits__img
+	&__img {
+		position: relative;
+
+		padding: 0 0 50%;
+		margin: 0 0 10px;
+
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: contain;
+		}
+	}
+
+	// .benefits__text
+	&__text {}
+}
+
+.situation-form {
+	padding: 5px 10px 0;
+
+	position: relative;
+
+	@media (min-width: 48.0625em) {
+		padding: 15px 10px 0;
+	}
+
+	// .situation-form__title
+	&__title {
+		font-family: 'Gilroy';
+
+		font-size: 1.375rem;
+		line-height: 1.2;
+		margin: 0 0 10px;
+
+		@media (min-width: 48.0625em) {
+			font-size: 1.625rem;
+			margin: 0 0 15px;
+			text-align: center;
+		}
+	}
+
+	// .situation-form__choices
+	&__choices {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		row-gap: 10px;
+	}
+
+	// .situation-form__option
+	&__option {
+		flex-basis: 24%;
+		min-width: 84px;
+
+		position: relative;
+
+		input[type=radio] {
+			cursor: pointer;
+			appearance: none;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+
+			&::before {
+				opacity: 0;
+				transition: 0.3s;
+
+				position: absolute;
+				top: -5px;
+				left: -5px;
+				z-index: 1;
+
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				color: #fff;
+				font-weight: 600;
+
+				width: 30px;
+				height: 30px;
+				background-color: #ffb900;
+				border-radius: 50%;
+			}
+
+			&:checked::before {
+				opacity: 1;
+			}
+		}
+	}
+
+	&__img {
+		border-radius: 5px;
+		box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
+		overflow: hidden;
+
+		position: relative;
+		padding: 0 0 100%;
+		margin: 0 0 10px;
+
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+		}
+	}
+
+	// .situation-form__label
+	&__label {
+		font-size: 0.8125rem;
+		font-weight: 350;
+
+		@media (min-width: 48.0625em) {
+			font-size: 1.125rem;
+		}
+	}
+
+	// .situation-form__text-inputs
+	&__text-inputs {
+		input {
+			font-family: 'Gilroy';
+
+			padding: 15px 5px;
+			border-bottom: 1px solid #7d7d7d;
+			width: 100%;
+
+			transition: box-shadow .2s;
+
+			@media (min-width: 64.0625em) {
+				font-size: 1.125rem;
+			}
+
+			&:focus {
+				box-shadow: inset 0px -5px 5px -5px #000;
+			}
+		}
+	}
+
+	&__choices,
+	&__text-inputs {
+		@media (min-width: 64.0625em) {
+			max-width: 90%;
+			margin: 0 auto;
+		}
+	}
+}
+
+// =============================================================================

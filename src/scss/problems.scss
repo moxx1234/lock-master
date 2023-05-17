@@ -1,0 +1,114 @@
+// ========================= Problems ==========================================
+
+.problems {
+	background-color: #FAFAFA;
+	padding: 5% 0;
+
+	// .problems__container
+	&__container {
+
+		@media (min-width: 90.0625em) {
+			max-width: 70%;
+		}
+
+	}
+
+	// .problems__title
+	&__title {
+		text-align: center;
+
+		@media (min-width: 26.625em) {
+			text-align: left;
+		}
+	}
+
+	// .problems__list
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(2, 47%);
+		justify-content: space-between;
+		row-gap: 30px;
+
+		@media (min-width: 48.0625em) {
+			display: flex;
+			gap: 20px;
+		}
+	}
+
+	// .problems__item
+	&__item {
+		&:first-child {
+			img {
+				object-position: 100% center;
+			}
+		}
+
+		@media (min-width: 48.0625em) {
+			flex: 1 0 20%;
+
+		}
+	}
+}
+
+.problem {
+	display: flex;
+	flex-direction: column;
+
+	opacity: 0;
+	transform: translateY(35%);
+	transition-property: transform, opacity;
+	transition-duration: .5s;
+
+	&.appeared {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	// .problem__img
+	&__img {
+		position: relative;
+
+		padding: 0 0 90%;
+		margin: 0 0 10px;
+
+		border-radius: 5px;
+		overflow: hidden;
+
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+			object-position: center;
+		}
+	}
+
+	p {
+		flex: 1 0 auto;
+
+		font-weight: 350;
+		font-size: 0.875rem;
+
+		margin: 0 0 15px;
+
+		@media (min-width: 26.625em) {
+			font-size: 1.25rem;
+			margin: 0 0 20px;
+		}
+	}
+
+	a {
+		border-radius: 5px;
+		text-align: center;
+
+		padding: 7px;
+
+		@media (min-width: 26.625em) {
+			padding: 12px;
+		}
+	}
+}
+
+// =============================================================================

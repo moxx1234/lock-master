@@ -1,0 +1,47 @@
+// ========================= Portfolio =========================================
+
+.portfolio {
+
+	// .portfolio__container
+	&__container {}
+
+	// .portfolio__title
+	&__title {}
+
+	// .portfolio__photo-container
+	&__photo-container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 10px;
+
+		@media (min-width: 48.0625em) {
+			grid-template-columns: repeat(4, 1fr);
+			gap: 30px;
+		}
+	}
+
+	// .portfolio__photo-item
+	&__photo-item {
+		position: relative;
+		padding: 0 0 100%;
+
+		opacity: 0;
+		transform: translateX(-50%);
+		transition-property: opacity, transform;
+		transition-duration: .5s;
+
+		&.appeared {
+			opacity: 1;
+			transform: translateX(0);
+		}
+
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}
+
+// =============================================================================

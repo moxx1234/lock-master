@@ -1,0 +1,103 @@
+// ========================= Prices ============================================
+.prices {
+
+	// .problems__container
+	&__container {
+		@media (min-width: 64.0625em) {
+			max-width: 70%;
+		}
+	}
+
+	// .prices__title
+	&__title {
+		margin: 0 0 10px;
+
+		@media (min-width: 26.625em) {
+			margin: 0 0 15px;
+		}
+
+		@media (min-width: 48.0625em) {
+			margin: 0 0 25px;
+		}
+	}
+
+	// .prices__description
+	&__description {
+		font-size: 0.75rem;
+		color: #696969;
+		font-weight: 350;
+		line-height: 1.55;
+
+		margin: 0 0 15px;
+
+		@media (min-width: 26.625em) {
+			font-size: 1rem;
+
+			margin: 0 0 20px;
+		}
+
+		@media (min-width: 48.0625em) {
+			font-size: 1.25rem;
+
+			max-width: 80%;
+
+			margin: 0 0 30px;
+		}
+
+		@media (min-width: 64.0625em) {
+			max-width: 65%;
+		}
+	}
+
+	// .prices__item
+	&__item {
+		border-top: 1px solid #ddd;
+		font-size: 1.125rem;
+		line-height: 1.25;
+
+		padding: 10px;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		opacity: 0;
+		transform: translateX(-45%);
+		transition-property: transform, opacity;
+		transition-duration: .5s;
+
+		&.appeared {
+			opacity: 1;
+			transform: translateX(0);
+		}
+
+		@media (min-width: 48.0625em) {
+			padding: 15px;
+		}
+
+		&:last-child {
+			border-bottom: 1px solid #ddd;
+		}
+	}
+
+	// .prices__name
+	&__name {
+		flex-basis: 55%;
+
+		font-size: 1rem;
+		font-weight: 350;
+	}
+
+	// .prices__price
+	&__price {
+		color: #ffb900;
+		font-weight: 600;
+
+		@media (min-width: 48.0625em) {
+			flex: 1 0 auto;
+			text-align: center;
+		}
+	}
+}
+
+// =============================================================================

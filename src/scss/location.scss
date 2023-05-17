@@ -1,0 +1,105 @@
+// ========================= Location =========================================
+
+.location {
+	background-image: url('../img/location/background.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+
+	padding: 20px 0;
+
+	color: #fff;
+	overflow: hidden;
+
+	// .location__container
+	&__container {
+		@media (min-width: 48.0625em) {
+			display: flex;
+			flex-direction: row-reverse;
+			align-items: center;
+			justify-content: space-between;
+			gap: 10%;
+
+			padding: 3% 0;
+		}
+	}
+
+	// .location__text-content
+	&__text-content {
+		font-weight: 350;
+		position: relative;
+		z-index: 1;
+
+		@media (min-width: 48.0625em) {
+			flex: 0 0 50%;
+		}
+	}
+
+	// .location__title
+	&__title {
+		transform: translateX(50%);
+
+		@media (min-width: 64.0625em) {
+			font-size: 3.5rem;
+		}
+	}
+
+	// .location__text
+	&__text {
+		margin: 0 0 10px;
+
+		@media (min-width: 26.625em) {
+			margin: 0 0 15px;
+		}
+	}
+
+	// .location__images-item
+	&__images-item {
+		padding: 0 0 50%;
+		position: relative;
+
+		@media (min-width: 26.625em) {
+			display: block;
+		}
+
+		@media (min-width: 48.0625em) {
+			flex: 1 0 30%;
+			padding: 0 0 40%;
+		}
+	}
+
+	// .location__image
+	&__image {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: contain;
+
+		// .location__image_frame
+		&_frame {}
+
+		// .location__image_car
+		&_car {
+			width: 80%;
+			height: 80%;
+
+			left: 50%;
+			top: 60%;
+
+			transform: translate(-90%, -50%);
+
+			&.appeared {
+				transform: translate(-50%, -50%);
+			}
+
+			@media (min-width: 48.0625em) {
+				width: 150%;
+				height: 100%;
+			}
+		}
+	}
+}
+
+// =============================================================================
